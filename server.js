@@ -32,7 +32,17 @@ app.get('/crawlerSave', function (req, res) {
 });
 
 app.get('/crawlerSearch', function (req, res) {
-    searchService.get(req.query.filter, req.query.startDate, req.query.endDate, (content) => {
+    searchService.search(req.query.filter, req.query.startDate, req.query.endDate, (content) => {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify(content));
+    }, (err) => {
+        console.error(err.stack)
+        res.status(500).send(JSON.stringify(err))
+    });
+});
+
+app.get('/crawlerGet', function (req, res) {
+    searchService.get(req.query._id, (content) => {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify(content));
     }, (err) => {

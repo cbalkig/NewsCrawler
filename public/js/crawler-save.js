@@ -31,7 +31,7 @@
     $('#keywordList').text(keywordListText);
 
     $('#startDate').val('01/03/2018');
-    $('#endDate').val('21/03/2018');
+    $('#endDate').val('23/03/2018');
 
     $('#save').click(function(){
         $.blockUI({ message: '<h3>Just a moment...</h3>' });

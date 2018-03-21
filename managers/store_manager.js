@@ -33,6 +33,18 @@ storeManager.save = (url, time, keyword, title, body) => {
     });
 };
 
+storeManager.get = (id) => {
+    return new Promise((resolve, reject) => {
+        db.get(storeManager.collection, id, (err, content) => {
+            if(err){
+                return reject(err);
+            }
+
+            return resolve(content);
+        });
+    });
+};
+
 storeManager.find = (filter) => {
     return new Promise((resolve, reject) => {
         db.find(storeManager.collection, filter, (err, content) => {
@@ -58,6 +70,7 @@ storeManager.count = () => {
 };
 
 module.exports.save = storeManager.save;
+module.exports.get = storeManager.get;
 module.exports.find = storeManager.find;
 module.exports.count = storeManager.count;
 module.exports.setSettings = storeManager.setSettings;
