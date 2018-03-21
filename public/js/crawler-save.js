@@ -4,12 +4,11 @@
     $('#status').hide();
 
     let urlList = new Array();
-    urlList.push('http://www.cumhuriyet.com.tr');
+    urlList.push('http://www.bbc.com');
     urlList.push('http://www.hurriyet.com.tr');
-    urlList.push('http://www.milliyet.com.tr');
-    urlList.push('http://www.sabah.com.tr');
-    urlList.push('http://www.radikal.com.tr');
-    urlList.push('http://www.fanatik.com.tr');
+    urlList.push('https://tr.sputniknews.com');
+    urlList.push('https://onedio.com');
+    urlList.push('https://www.nytimes.com/');
 
     let urlListText = '';
     for(let url of urlList){
@@ -22,6 +21,8 @@
     keywordList.push('ekonomi');
     keywordList.push('politika');
     keywordList.push('gündem');
+    keywordList.push('economy');
+    keywordList.push('politics');
 
     let keywordListText = '';
     for(let keyword of keywordList){
